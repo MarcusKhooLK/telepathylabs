@@ -2,6 +2,7 @@ package com.assessment.telepathylabs.question1;
 
 import java.io.FileInputStream;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,19 +28,24 @@ public class Application {
             DateFormat formatter = new SimpleDateFormat("kk:mm");
             while (reader.hasNext()) {
                 String[] fromAndTo = reader.nextLine().split("-");
+                if (fromAndTo.length != 2) {
+                    continue;
+                }
                 startTimes.add(formatter.parse(fromAndTo[0]));
                 endTimes.add(formatter.parse(fromAndTo[1]));
             }
-            Collections.sort(startTimes);
-            Collections.sort(endTimes);
+            // Collections.sort(startTimes);
+            // Collections.sort(endTimes);
+            System.out.println(startTimes);
+            System.out.println(endTimes);
             int ongoingMeetings = 1;
             int noOfMeetingRooms = 1;
             int i = 1;
             int j = 0;
-            while(i < startTimes.size() && j < endTimes.size()) {
-                if(startTimes.get(i).compareTo(endTimes.get(j)) < 0) {
+            while (i < startTimes.size() && j < endTimes.size()) {
+                if (startTimes.get(i).compareTo(endTimes.get(j)) < 0) {
                     ongoingMeetings++;
-                    if(ongoingMeetings > noOfMeetingRooms) {
+                    if (ongoingMeetings > noOfMeetingRooms) {
                         noOfMeetingRooms = ongoingMeetings;
                     }
                     i++;
