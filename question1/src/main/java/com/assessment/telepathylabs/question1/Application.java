@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -32,10 +33,8 @@ public class Application {
                 startTimes.add(formatter.parse(fromAndTo[0]));
                 endTimes.add(formatter.parse(fromAndTo[1]));
             }
-            // Collections.sort(startTimes);
-            // Collections.sort(endTimes);
-            System.out.println(startTimes);
-            System.out.println(endTimes);
+            Collections.sort(startTimes);
+            Collections.sort(endTimes);
             int ongoingMeetings = 1;
             int noOfMeetingRooms = 1;
             int i = 1;
