@@ -1,0 +1,5 @@
+PLAN1,100,voice
+PLAN2,150,admin
+PLAN3,125,database,admin
+PLAN4,135,database,admin
+PLAN5,1,email
