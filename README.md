@@ -1,6 +1,8 @@
 # Question 1
 ## Build and Run Jar
+```console
 mvn package
+```
 ```console
 java -jar question1-0.0.1.jar <filepath>
 ```
