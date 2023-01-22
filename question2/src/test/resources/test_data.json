@@ -1,0 +1,33 @@
+{
+    "allPlans" : [
+        {
+            "name" : "PLAN1",
+            "price" : 100,
+            "features" : [
+                "voice", "email"
+            ]
+        },
+        {
+            "name" : "PLAN2",
+            "price" : 150,
+            "features" : [
+                "email", "database", "admin"
+            ]
+        },
+        {
+            "name" : "PLAN3",
+            "price" : 125,
+            "features" : [
+                "voice", "admin"
+            ]
+        },
+        {
+            "name" : "PLAN4",
+            "price" : 135,
+            "features" : [
+                "database", "admin"
+            ]
+        }
+    ],
+    "selectedFeatures" : ["email","voice","admin"]
+}

@@ -22,6 +22,7 @@ public class PlanRESTController {
     public ResponseEntity<String> postPlan(@RequestBody String payload) {
 
         Response result = planService.processFromJsonString(payload);
-        return ResponseEntity.ok().body(result.getData().toString());
+
+        return ResponseEntity.ok().body(result.toJson().toString());
     }
 }

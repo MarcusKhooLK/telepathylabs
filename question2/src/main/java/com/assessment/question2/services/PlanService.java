@@ -15,7 +15,6 @@ import com.assessment.question2.models.Response;
 
 import jakarta.json.Json;
 import jakarta.json.JsonArray;
-import jakarta.json.JsonArrayBuilder;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonReader;
 
@@ -27,7 +26,7 @@ public class PlanService {
     private List<Plan> minPlans = new ArrayList<>();
     private Double minPrice = Double.MAX_VALUE;
 
-    public String processFromFile(String filePath, String featureSet) throws Exception {
+    public void processFromFile(String filePath, String featureSet) throws Exception {
         reset();
 
         Scanner reader = new Scanner(new FileInputStream(filePath));
@@ -51,7 +50,7 @@ public class PlanService {
 
         StringJoiner joiner = new StringJoiner(", ");
         minPlans.forEach(item -> joiner.add(item.getName()));
-        return "%.2f, ".formatted(minPrice) + joiner.toString();
+        System.out.println("%.2f, ".formatted(minPrice) + joiner.toString());
     }
 
     public Response processFromJsonString(String jsonString) {
@@ -72,12 +71,12 @@ public class PlanService {
         findCombinations(new ArrayList<>(), 0, 0.0);
 
         Response resp = new Response();
-        JsonArrayBuilder arrayBuilder = Json.createArrayBuilder();
+        List<String> planNames = new ArrayList<>();
         minPlans.forEach(item -> {
-            arrayBuilder.add(item.getName());
+            planNames.add(item.getName());
         });
-        jObj = Json.createObjectBuilder().add("price", minPrice).add("plans", arrayBuilder.build()).build();
-        resp.setData(jObj);
+        resp.setPrice(minPrice);
+        resp.setPlanNames(planNames);
         return resp;
     }
 

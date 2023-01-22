@@ -20,8 +20,17 @@ public class Question2Application implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        if (args.getSourceArgs().length > 2)
+        if (args.getSourceArgs().length > 1) {
+            String args1 = args.getSourceArgs()[0];
+            if(args1.isEmpty()) return;
+
+            System.out.println(args.getSourceArgs()[0]);
+            System.out.println(args.getSourceArgs()[1]);
             planService.processFromFile(args.getSourceArgs()[0], args.getSourceArgs()[1]);
+            System.exit(0);
+        }
+
+        System.out.println("Reading from REST API...");
     }
 
 }

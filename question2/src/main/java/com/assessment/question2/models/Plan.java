@@ -41,14 +41,4 @@ public class Plan {
         p.setFeatures(featuresList);
         return p;
     }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(name + " | " + price + " | ");
-        for(String f : features) {
-            builder.append(f + ", ");
-        }
-        return builder.toString();
-    }
 }
