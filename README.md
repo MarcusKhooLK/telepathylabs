@@ -113,3 +113,8 @@ docker run -v <volumepath> marcuskhoo/telepathy-q2:v0.0.1 <filepath> <feature1,f
 docker run -v C:/Users/USER/Desktop:/tmp marcuskhoo/telepathy-q2:v0.0.1 /tmp/Example1.txt email,voice,admin
 ```
 
+### Test REST API
+For testing, I'm using JUnit, MockMvc and Json as input and output data. As seen in /question2/src/test 
+```console
+mvn test
+```
