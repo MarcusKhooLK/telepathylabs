@@ -1,22 +1,39 @@
 # Question 1
 ## Build and Run Jar
 mvn package
-java -jar question1-0.0.1.jar `<filepath>` <br>
-Eg. java -jar question1-0.0.1.jar C:\Example1.txt
+```console
+java -jar question1-0.0.1.jar <filepath>
+```
+### Example
+```console
+java -jar question1-0.0.1.jar C:\Example1.txt
+```
 
 ## Run
-mvn spring-boot:run -Dspring-boot.run.arguments=`<filepath>` <br>
+mvn spring-boot:run -Dspring-boot.run.arguments=`<filepath>`
 Eg. mvn spring-boot:run -Dspring-boot.run.arguments="C:\Example1.txt"
 
 # Question 2
 ## Build and Run Jar
+```console
 mvn package
-java -jar question2-0.0.2.jar `<filepath>` `<feature1,feature2,...>` <br>
-Eg. java -jar question2-0.0.2.jar C:\Example1.txt email,voice,admin
+```
+```console
+java -jar question2-0.0.2.jar <filepath> <feature1,feature2,...>
+```
+### Example
+```console
+java -jar question2-0.0.2.jar C:\Example1.txt email,voice,admin
+```
 
 ## Run
-mvn spring-boot:run -Dspring-boot.run.arguments=`<filepath feature1,feature2,...>` <br>
-Eg. mvn spring-boot:run -Dspring-boot.run.arguments="C:\Example1.txt email,voice,admin"
+```console
+mvn spring-boot:run -Dspring-boot.run.arguments=<filepath feature1,feature2,...>
+```
+#### Example
+```console
+mvn spring-boot:run -Dspring-boot.run.arguments="C:\Example1.txt email,voice,admin"
+```
 
 ## Bonus for question 2
 Run question 2 without arguments for the program to wait for requests
@@ -72,10 +89,20 @@ https://app.swaggerhub.com/apis/MarcusKhooLK/findBestPlan/0.1
 ```
 
 ### Docker
-docker pull marcuskhoo/telepathy-q2:v0.0.1 <br>
+#### Pull
+```console
+docker pull marcuskhoo/telepathy-q2:v0.0.1
+```
+#### Run
+```console
 docker run marcuskhoo/telepathy-q2:v0.0.1
-
-Run with file and features as arguments <br>
-docker run -v `<volumepath>` `<filepath>` `<feature1,feature2,...>`
-
+```
+#### Run with file and features as arguments
+```console
+docker run -v <volumepath> marcuskhoo/telepathy-q2:v0.0.1 <filepath> <feature1,feature2,...>
+```
+#### Example
+```console
+docker run -v C:/Users/USER/Desktop:/tmp marcuskhoo/telepathy-q2:v0.0.1 /tmp/Example1.txt email,voice,admin
+```
 
