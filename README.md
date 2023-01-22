@@ -110,7 +110,7 @@ docker run -v <volumepath> marcuskhoo/telepathy-q2:v0.0.1 <filepath> <feature1,f
 ```
 #### Example
 ```console
-docker run -v C:/Users/USER/Desktop:/tmp marcuskhoo/telepathy-q2:v0.0.1 /tmp/Example1.txt email,voice,admin
+docker run -v C:/Users/USER:/tmp marcuskhoo/telepathy-q2:v0.0.1 /tmp/Example1.txt email,voice,admin
 ```
 
 ### Test REST API
