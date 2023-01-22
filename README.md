@@ -10,8 +10,13 @@ java -jar question1-0.0.1.jar C:\Example1.txt
 ```
 
 ## Run
-mvn spring-boot:run -Dspring-boot.run.arguments=`<filepath>`
-Eg. mvn spring-boot:run -Dspring-boot.run.arguments="C:\Example1.txt"
+```console
+mvn spring-boot:run -Dspring-boot.run.arguments=<filepath>
+```
+### Example
+```console
+mvn spring-boot:run -Dspring-boot.run.arguments="C:\Example1.txt"
+```
 
 # Question 2
 ## Build and Run Jar
