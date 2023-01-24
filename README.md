@@ -102,15 +102,15 @@ docker pull marcuskhoo/telepathy-q2:v0.0.1
 ```
 #### Run
 ```console
-docker run marcuskhoo/telepathy-q2:v0.0.1
+docker run -p8080:8080 marcuskhoo/telepathy-q2:v0.0.1
 ```
 #### Run with file and features as arguments
 ```console
-docker run -v <volumepath> marcuskhoo/telepathy-q2:v0.0.1 <filepath> <feature1,feature2,...>
+docker run -p8080:8080 -v <volumepath> marcuskhoo/telepathy-q2:v0.0.1 <filepath> <feature1,feature2,...>
 ```
 #### Example
 ```console
-docker run -v C:/Users/USER:/tmp marcuskhoo/telepathy-q2:v0.0.1 /tmp/Example1.txt email,voice,admin
+docker run -p8080:8080 -v C:/Users/USER:/tmp marcuskhoo/telepathy-q2:v0.0.1 /tmp/Example1.txt email,voice,admin
 ```
 
 ### Test REST API
